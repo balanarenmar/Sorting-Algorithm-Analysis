@@ -91,8 +91,32 @@ Quicksort is notably the slowest across all values of N, if the input array is a
 
 ## **Challenges Encountered**
 
- C's `rand()` function can only generate integers from 0 until 32767, which is equivalent to the binary value *111111111111111*: 15 bits that are all flipped. Because the MAXRANGE to be used is 1 million, with binary value *11110100001001000000*, we need a minimum of 20 bits to represent a million unique integers.
+ C's `rand()` function can only generate integers from **0** until **32767**, which is equivalent to the binary value *`111111111111111`*: 15 bits that are all flipped. Because the MAXRANGE to be used is 1 million, with binary value *`11110100001001000000`*, we need a minimum of 20 bits to represent a million unique integers.
 
- So, to be able to randomly generate numbers from 0 to  million, a little binary manipulation was done. 
+ So, to be able to randomly generate numbers from **0** to  a million, a little binary manipulation was done. 
 
- <image src="assets/image.png" alt="bitwise operator" width="80%">
+ <br><image src="assets/image.png" alt="bitwise operator" width="80%"><br>
+
+ By using the bit-shift operator on the first integer to increase the maximum then performing XOR with a another random number, we can generate random numbers up to **1,073,719,978**.
+
+ Lastly, performing a modulo operator with exactly 1,000,001 will leave us with a range of possible integer values from [0-1,000,000].
+
+However, this solution is not without flaws. *`111111111111111111111111111111`* (30 1’s will yield: ) **1,073,741,823** as maximum possible value generated, before modulo operation.<br>Beacause this sample size is not perfectly divisible by the maximum possible value, the range [0 - 740,749] has a probability of being generated of 1/1074.<br>The rest of the numbers [740,750 – 1,000,000] only has a probability of being generated 1/1073. 
+
+
+<br>
+&nbsp;   1,073,741,823<br>
+<u>%      1,000,001</u><br>
+=             740,750
+
+<br>
+&nbsp;   1,073,741,823<br>
+<u>/        1,000,001</u><br>
+=                1073.74074926
+
+&nbsp;
+<pre>
+hello, this is
+   just an     example
+....
+</pre>
