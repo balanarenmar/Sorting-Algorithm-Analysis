@@ -20,6 +20,8 @@ After sorting the input set, the efficiency of each algorithms are measured by t
 4.  The program also outputs the computation time T(N) for sorting N integers. Be sure that this time includes only the computation time and not the time spent interacting with user and or generating the integers.
 
 
+<img src="assets/fig1.png" width="80%" >
+
 <br>
 
 ## **Output Analysis**

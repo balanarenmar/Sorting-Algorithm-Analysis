@@ -3,11 +3,6 @@
 // Ralph James Madrid
 // Joshua Toledo Navia
 
-/*
-
-
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
