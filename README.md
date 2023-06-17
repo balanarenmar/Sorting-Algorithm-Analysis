@@ -1,4 +1,4 @@
-# A Performance Analysis on Basic Sorting Algorithms
+# **A Performance Analysis on Basic Sorting Algorithms**
 This program uses different sorting algorithms (Insertion Sort, Merge sort, Quicksort, and Heapsort) to  sort 2 kinds of input:
 1. N number if **unordered** and randomly generated integers. 
 2. N number of **ordered** set of integers.
@@ -85,3 +85,14 @@ Quicksort is notably the slowest across all values of N, if the input array is a
 - Quick sort is the best sorting algorithm to use if the array to be sorted is randomly spread. However, we need to be careful in using it, because feeding an already sorted array into quicksort will take a lot of time to process.
 
 - Inversely, Insertion sort works best in an array that is already sorted, but would struggle in practical use, because we usually arrange unsorted data in real world scenarios.
+
+---
+<br>
+
+## **Challenges Encountered**
+
+ C's `rand()` function can only generate integers from 0 until 32767, which is equivalent to the binary value *111111111111111*: 15 bits that are all flipped. Because the MAXRANGE to be used is 1 million, with binary value *11110100001001000000*, we need a minimum of 20 bits to represent a million unique integers.
+
+ SO, to be able to randomly generate numbers from 0 to  million, a little binary manipulation was done. 
+
+ <image src="assets/image.png" alt="bitwise operator" width="80%">
