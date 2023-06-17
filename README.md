@@ -91,30 +91,27 @@ Quicksort is notably the slowest across all values of N, if the input array is a
 
 ## **Challenges Encountered**
 
- C's `rand()` function can only generate integers from **0** until **32767**, which is equivalent to the binary value *`111111111111111`*: 15 bits that are all flipped. Because the MAXRANGE to be used is 1 million, with binary value *`11110100001001000000`*, we need a minimum of 20 bits to represent a million unique integers.
+ C's `rand()` function can only generate integers from **0** until **32,767**, which is equivalent to the binary value *`111111111111111`*: 15 bits that are all flipped. Because the MAXRANGE to be used is 1 million, with binary value *`11110100001001000000`*, we need a minimum of 20 bits to represent a million unique integers.
 
  So, to be able to randomly generate numbers from **0** to  a million, a little binary manipulation was done. 
 
  <br><image src="assets/image.png" alt="bitwise operator" width="80%"><br>
 
- By using the bit-shift operator on the first integer to increase the maximum then performing XOR with a another random number, we can generate random numbers up to **1,073,719,978**.
+ By using the bit-shift operator on the first integer to increase the max possible value then performing XOR with a another random number, we can generate random numbers up to **1,073,719,978**.
 
  Lastly, performing a modulo operator with exactly 1,000,001 will leave us with a range of possible integer values from [0-1,000,000].
 
-However, this solution is not without flaws. *`111111111111111111111111111111`* (30 1’s will yield: ) **1,073,741,823** as the maximum possible value generated, before modulo operation.<br>Beacause this sample size is not perfectly divisible by the maximum possible value, the range [0 - 740,749] has a probability of being generated of 1/1074.<br>The rest of the numbers [740,750 – 1,000,000] only has a probability of being generated 1/1073. 
-
-
+However, this solution is not without flaws. *`111111111111111111111111111111`* (30 1’s will yield: ) **1,073,741,823** as the maximum possible value that can be generated, before modulo operation.<br>Beacause this sample size is not perfectly divisible by our desired maximum possible value, the range [0 - 740,749] has a slightly greater chance of being picked, compared to the rest of the numbers [740,750 – 1,000,000].
 
 <pre>
-  1,073,741,823
-%     1,000,001
-----------------
-        740,750
+Probability =           (number of possible outcomes)/(total number of outcomes)
+ideal probability:      (1/1,000,001) = 0.000000999999
+
+[0-740,749]:            1074/1,073,741,823 = 0.00000100024
+[740,750 – 1,000,000]:  1073/1,073,741,823 = 0.00000099930
 </pre>
 
-<pre>
-  1,073,741,823
-/     1,000,001
-----------------
-           1,073.74074926
-</pre>
+
+Thus the sample set is very, very, very slightly more biased in the first 74% integers of 1 million. But this bias is so small that it is practically negligible.
+
+---
