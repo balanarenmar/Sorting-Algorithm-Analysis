@@ -7,6 +7,21 @@ After sorting the input set, the efficiency of each algorithms are measured by t
 
 ---
 
+## **Program Behavior**
+1. The user is prompted to enter a value for **N** *(for number of integers)* as input.
+
+2. The program generates **N** integers which are either
+    - ***a.*** All integers are picked randomly with a uniform distribution from the range [0,1000000]; or
+
+    - ***b.*** Sorted in the increasing order, wherein in addition to N , the program should also ask an input **X** *(a positive number)* from the user and set the first element of the array to **N+X** , the second element to **N+2 X** and so on (generating an increasing sequence of N numbers).
+
+3.  The program sorts these N integers using the different algorithms and outputs a file with original and sorted values.
+
+4.  The program also outputs the computation time T(N) for sorting N integers. Be sure that this time includes only the computation time and not the time spent interacting with user and or generating the integers.
+
+
+<br>
+
 ## **Output Analysis**
 <br>
 <table>
@@ -38,9 +53,11 @@ After sorting the input set, the efficiency of each algorithms are measured by t
 | 100,000 | 0.0008 | 0.0440 | 0.044 | 0.0346 |
 
 </td></tr>
-</table><br>
+</table>
 
 **The values presented are time in seconds.*
+
+<br>
 
 + **Insertion sort** progressively gets slower as the input size gets larger for random input. It’s also the slowest algorithm for a random array. In the worst case, this algorithm would perform `O(n^2)` time. For an input array that is already sorted, insertion sort is always fast no matter the size of N. This is the best case for insertion sort as it takes only `O(n)` time.
 

@@ -1,3 +1,13 @@
+// MEMBERS:
+// Renmar Balana
+// Ralph James Madrid
+// Joshua Toledo Navia
+
+/*
+
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -50,7 +60,7 @@ int main(void) {										//start of main function
 			printf("Error! enter a POSITIVE integer: ");
 	}while(N < 1);		
 	GenerateRandom(N, arrRand);
-	printf("\tGenerated array of random numbers:\n");					//print in screen the generated Random array
+	printf("\n\tGenerated array of random numbers:\n");					//print in screen the generated Random array
 		printArr(N, arrRand);
 	
 	
