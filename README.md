@@ -11,18 +11,23 @@ After sorting the input set, the efficiency of each algorithms are measured by t
 1. The user is prompted to enter a value for **N** *(for number of integers)* as input.
 
 2. The program generates **N** integers which are either
-    - ***a.*** All integers are picked randomly with a uniform distribution from the range [0,1000000]; or
+    - ***a)*** All integers are picked randomly with a uniform distribution from the range [0,1000000]; or
 
-    - ***b.*** Sorted in the increasing order, wherein in addition to N , the program should also ask an input **X** *(a positive number)* from the user and set the first element of the array to **N+X** , the second element to **N+2 X** and so on (generating an increasing sequence of N numbers).
+    - ***b)*** Sorted in the increasing order, wherein in addition to **N** , the program should also ask an input **X** *(a positive number)* from the user and set the first element of the array to **N+X** , the second element to **N+2 X** and so on (generating an increasing sequence of N numbers).
 
-3.  The program sorts these N integers using the different algorithms and outputs a file with original and sorted values.
+3.  The program sorts these **N** integers using the different algorithms and outputs a text file named *"Array_Values+Processor_Time.txt"* with original and sorted values.
 
-4.  The program also outputs the computation time T(N) for sorting N integers. Be sure that this time includes only the computation time and not the time spent interacting with user and or generating the integers.
-
-
-<img src="assets/fig1.png" width="80%" >
+4.  The program also outputs the computation time **T(N)** for sorting **N** integers. This time is exclusive only to the computation time and not the time spent interacting with user and or generating the integers.
 
 <br>
+
+<img src="assets/fig1.png" alt="screenshot of program" width="90%" >
+
+--- 
+
+<br>
+
+
 
 ## **Output Analysis**
 <br>
