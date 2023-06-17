@@ -101,22 +101,20 @@ Quicksort is notably the slowest across all values of N, if the input array is a
 
  Lastly, performing a modulo operator with exactly 1,000,001 will leave us with a range of possible integer values from [0-1,000,000].
 
-However, this solution is not without flaws. *`111111111111111111111111111111`* (30 1’s will yield: ) **1,073,741,823** as maximum possible value generated, before modulo operation.<br>Beacause this sample size is not perfectly divisible by the maximum possible value, the range [0 - 740,749] has a probability of being generated of 1/1074.<br>The rest of the numbers [740,750 – 1,000,000] only has a probability of being generated 1/1073. 
+However, this solution is not without flaws. *`111111111111111111111111111111`* (30 1’s will yield: ) **1,073,741,823** as the maximum possible value generated, before modulo operation.<br>Beacause this sample size is not perfectly divisible by the maximum possible value, the range [0 - 740,749] has a probability of being generated of 1/1074.<br>The rest of the numbers [740,750 – 1,000,000] only has a probability of being generated 1/1073. 
 
 
-<br>
-&nbsp;   1,073,741,823<br>
-<u>%      1,000,001</u><br>
-=             740,750
 
-<br>
-&nbsp;   1,073,741,823<br>
-<u>/        1,000,001</u><br>
-=                1073.74074926
-
-&nbsp;
 <pre>
-hello, this is
-   just an     example
-....
+  1,073,741,823
+%     1,000,001
+----------------
+        740,750
+</pre>
+
+<pre>
+  1,073,741,823
+/     1,000,001
+----------------
+           1,073.74074926
 </pre>
